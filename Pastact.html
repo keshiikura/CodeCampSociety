@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Past Activities - Code Camp Society</title>
+  <link rel="stylesheet" href="Main.css" />
+  <link rel="stylesheet" href="pastact.css" />
+</head>
+<body>
+  
+  <!-- Move header OUTSIDE the container so it's full width -->
+  <header class="main-header">
+    <div class="header-content">
+      <h1>Code Camp Society</h1>
+    </div>  
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">Our Past Activities</h1>
+
+    <div class="gallery-container">
+      <!-- All your polaroid cards remain here -->
+      <!-- Club Unite -->
+      <div class="polaroid-card">
+        <div class="slideshow">
+          <img src="ito yung una.jpg" class="slide active" />
+          <img src="clubeunite01.jpg" class="slide" />
+          <img src="ClubUnite2.jpg" class="slide" />
+          <img src="ClubUnite3.jpg" class="slide" />
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+        <div class="polaroid-content">
+          <h3 class="activity-title">Club Unite</h3>
+          <p class="activity-date">December 09, 2024</p>
+          <p class="activity-description">
+            Featuring a Tekken Tournament and a student-led Art Gallery showcasing digital artworks, game prototypes, with a hint of cosplaying, and more!
+          </p>
+        </div>
+      </div>
+
+      <!-- Halloween Coding Spree -->
+      <div class="polaroid-card">
+        <div class="slideshow">
+          <img src="hal1.jpg" class="slide active" />
+           <img src="hal2.jpg" class="slide active" />
+            <img src="hal3.jpg" class="slide active" />
+          
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+        <div class="polaroid-content">
+          <h3 class="activity-title">Halloween Coding Spree</h3>
+          <p class="activity-date">October 31, 2024</p>
+          <p class="activity-description">
+          A spooky-themed event with interactive horror games and costume/cosplay-inspired.
+          </p>
+        </div>
+      </div>
+
+      <!-- Valorant Tournament -->
+      <div class="polaroid-card">
+        <div class="slideshow">
+          <img src="valo.jpg" class="slide active" />
+          <img src="t1.jpg" class="slide" />
+           <img src="t2.jpg" class="slide" />
+            <img src="t3.jpg" class="slide" />
+             <img src="t4.jpg" class="slide" />
+              <img src="t5.jpg" class="slide" />
+               <img src="t6.jpg" class="slide" />
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+        <div class="polaroid-content">
+          <h3 class="activity-title">Valorant Tournament</h3>
+          <p class="activity-date">December, 10 2024</p>
+          <p class="activity-description">
+            Competitive play meets strategy and teamwork in our action-packed tournament experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="back-btn-container">
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <p>&copy; 2025 Code Camp Society. All rights reserved.</p>
+      <a href="https://www.facebook.com/CCSSJDM" target="_blank" class="fb-link">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
+      </a>
+    </footer>
+  </div>
+
+  <!-- Slideshow Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slideshows = document.querySelectorAll(".slideshow");
+
+      slideshows.forEach(show => {
+        const slides = show.querySelectorAll(".slide");
+        const prev = show.querySelector(".prev");
+        const next = show.querySelector(".next");
+        let index = 0;
+
+        const showSlide = (i) => {
+          slides.forEach((slide, idx) => {
+            slide.classList.toggle("active", idx === i);
+          });
+        };
+
+        prev.addEventListener("click", () => {
+          index = (index - 1 + slides.length) % slides.length;
+          showSlide(index);
+        });
+
+        next.addEventListener("click", () => {
+          index = (index + 1) % slides.length;
+          showSlide(index);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

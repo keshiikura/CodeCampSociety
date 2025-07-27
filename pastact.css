@@ -1,0 +1,129 @@
+body {
+  color: #333;
+  background: url('bgm.png') center/cover no-repeat fixed;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.main-header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.page-title {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.polaroid-card {
+  width: 260px;
+  background: white;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.03);
+}
+
+/* Slideshow Styling */
+.slideshow {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideshow button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+.slideshow .prev {
+  left: 10px;
+}
+
+.slideshow .next {
+  right: 10px;
+}
+
+.polaroid-content {
+  margin-top: 10px;
+}
+
+.activity-title {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.activity-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.activity-description {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Footer */
+.main-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.fb-link img {
+  width: 28px;
+  margin-top: 8px;
+}
